@@ -2,11 +2,11 @@
 version: "3.8"
 services:
   backend:
-    build: ./backend
+    build: ./backend/Dockerfile
     ports:
       - "5000:5000"
   frontend:
-    build: ./frontend
+    build: ./frontend/Dockerfile
     ports:
       - "8080:80"
     depends_on:
