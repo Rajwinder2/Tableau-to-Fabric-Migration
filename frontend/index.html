@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Migration Tool</title>
+</head>
+<body style="font-family: Arial">
+  <h2>DevOps Practice – Migration Tool</h2>
+  <button onclick="startMigration()">Start Migration</button>
+  <p id="output"></p>
+
+<script>
+function startMigration() {
+  fetch("http://localhost:5000/api/migrate")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("output").innerText =
+        data.message + " | Status: " + data.status;
+    })
+    .catch(err => {
+      document.getElementById("output").innerText = "Backend not reachable";
+    });
+}
+</script>
+</body>
+</html>
